@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exquisite Corpses</title>
+    <style>
+        @font-face {
+            font-family: 'PPEditorialNew-Ultralight';
+            src: url('fonts/PPEditorialNew-Ultralight.woff2') format('woff2'),
+                 url('fonts/PPEditorialNew-Ultralight.woff') format('woff'),
+                 url('fonts/PPEditorialNew-Ultralight.ttf') format('truetype');
+            font-weight: Extra Light;
+            font-style: normal;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: Helvetica, Sans-Serif;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        .bordertext {
+            font-size: 3vw;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-family: PPEditorialNew-Ultralight, serif;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2vw;
+            margin: 0;
+        }
+
+        .container-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 0px;
+            border: 1px solid black;
+            padding: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .exquisite-corpse {
+            position: relative;
+            width: 100%;
+        }
+
+        .part {
+            width: 100%;
+            height: 300px; /* Reduced height for each part */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .part img {
+            width: 100%;
+            height: 300px; /* Reduced total image height */
+            object-fit: cover;
+        }
+
+        /* Specific cropping for each part */
+        #corpse1-head img {
+            object-position: top; /* Show the top section (head) */
+        }
+
+        #corpse1-body img {
+            object-position: center; /* Show the middle section (torso) */
+        }
+
+        #corpse1-bottom img {
+            object-position: bottom; /* Show the bottom section (legs) */
+        }
+
+        /* Navigation arrows */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .arrow-left {
+            left: 0;
+        }
+
+        .arrow-right {
+            right: 0;
+        }
+
+        /* Style for the button */
+        button {
+            margin: 30px 0;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* Horizontal line style */
+        hr {
+            width: 80%;
+            max-width: 1200px;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        /* About section styling */
+        .about-title {
+            font-size: 2rem;
+            color: gray;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .about-title:hover {
+            color: black;
+        }
+
+        .about-content {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 7vw;
+            }
+
+            .subtitle {
+                font-size: 4.5vw;
+            }
+
+            .part {
+                height: 30vw; /* Adjusted for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 8vw;
+            }
+
+            .subtitle {
+                font-size: 5.5vw;
+            }
+
+            .part {
+                height: 35vw; /* Adjusted for even smaller screens */
+            }
+
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top text -->
+    <h1 class="main-headline">ssensexquisitecorpse</h1>
+
+    <h2 class="subtitle">le cadavre exquis boira le vin nouveau</h2>
+
+    <div class="container-wrapper">
+        <!-- Exquisite Corpses Container -->
+        <div class="container">
+            <div class="exquisite-corpse" id="corpse1">
+                <div class="part" id="corpse1-head">
+                    <button class="arrow arrow-left" onclick="changePart('head', -1)">&#8249;</button>
+                    <img src="" id="head-img">
+                        <button class="arrow arrow-right" onclick="changePart('head', 1)">&#8250;</button>
+                    </div>
+                    <div class="part" id="corpse1-body">
+                        <button class="arrow arrow-left" onclick="changePart('body', -1)">&#8249;</button>
+                        <img src="" id="body-img">
+                        <button class="arrow arrow-right" onclick="changePart('body', 1)">&#8250;</button>
+                    </div>
+                    <div class="part" id="corpse1-bottom">
+                        <button class="arrow arrow-left" onclick="changePart('bottom', -1)">&#8249;</button>
+                        <img src="" id="bottom-img">
+                        <button class="arrow arrow-right" onclick="changePart('bottom', 1)">&#8250;</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom text -->
+            <h2 class="subtitle">the exquisite corpse will drink the new wine</h2>
+
+            <!-- Horizontal Line -->
+            <hr>
+
+            <!-- About Section -->
+            <h1 class="about-title" onclick="toggleAbout()">ABOUT</h1>
+            <div class="about-content" id="aboutSection">
+                <p>This project explores the surrealist art technique known as the exquisite corpse. By randomly combining different parts of images, new and unique combinations are created that reflect the randomness and unpredictability of this method. Inspired by the works of artists like Salvador Dalí, this web experiment aims to bring the surreal into the digital space.</p>
+                <p>Feel free to use the arrows to change parts of the corpse and create your own unique combinations.</p>
+            </div>
+        </div>
+
+        <script>
+            // Total images available
+            const totalImages = 278; // Total number of image sets
+
+            let currentHead;
+            let currentBody;
+            let currentBottom;
+
+            // Function to generate a random integer between min and max
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            // Function to initialize random parts
+            function initializeRandomParts() {
+                currentHead = getRandomInt(1, totalImages);
+                currentBody = getRandomInt(1, totalImages);
+                currentBottom = getRandomInt(1, totalImages);
+
+                document.getElementById('head-img').src = `images/ssense_${currentHead}.jpg`;
+                document.getElementById('body-img').src = `images/ssense_${currentBody}.jpg`;
+                document.getElementById('bottom-img').src = `images/ssense_${currentBottom}.jpg`;
+            }
+
+            // Function to change the part (head, body, bottom) based on arrow clicks
+            function changePart(part, direction) {
+                let currentImage;
+                if (part === 'head') {
+                    currentHead += direction;
+                    if (currentHead < 1) currentHead = totalImages;
+                    if (currentHead > totalImages) currentHead = 1;
+                    currentImage = currentHead;
+                    document.getElementById('head-img').src = `images/ssense_${currentImage}.jpg`;
+                } else if (part === 'body') {
+                    currentBody += direction;
+                    if (currentBody < 1) currentBody = totalImages;
+                    if (currentBody > totalImages) currentBody = 1;
+                    currentImage = currentBody;
+                    document.getElementById('body-img').src = `images/ssense_${currentImage}.jpg`;
+                } else if (part === 'bottom') {
+                    currentBottom += direction;
+                    if (currentBottom < 1) currentBottom = totalImages;
+                    if (currentBottom > totalImages) currentBottom = 1;
+                    currentImage = currentBottom;
+                    document.getElementById('bottom-img').src = `images/ssense_${currentImage}.jpg`;
+                }
+            }
+
+            // Toggle about section visibility
+            function toggleAbout() {
+                const aboutContent = document.getElementById('aboutSection');
+                aboutContent.style.display = aboutContent.style.display === 'none' || aboutContent.style.display === '' ? 'block' : 'none';
+            }
+
+            // Initialize random parts on page load
+            window.onload = initializeRandomParts;
+        </script>
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
