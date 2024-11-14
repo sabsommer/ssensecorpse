@@ -83,13 +83,14 @@
         }
 
         /* Style for the button container */
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            width: 80%; /* Matches container width */
-            max-width: 1200px; /* Same as the main container */
-            margin-top: 30px;
-        }
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        max-width: 1200px;
+        margin-top: 30px;
+    }
+
 
         /* Additional button styling */
         button {
@@ -107,30 +108,46 @@
         }
 
         /* About section styling */
-        .about-title {
-            font-size: 2rem;
-            color: gray;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
 
-        .about-title:hover {
-            color: black;
-        }
+    /* About section container aligned left */
+    .about-container {
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
 
-        .about-content {
-            display: none;
-            margin-top: 20px;
-            text-align: left;
-            width: 80%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    /* Style for About title */
+    .about-title {
+        font-size: 2rem;
+        color: gray;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        text-shadow: none;
+        text-align: left;
+    }
 
-        .about-content p {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
+    .about-title:hover {
+        color: black;
+        text-shadow: 0 0 8px red;
+    }
+
+    /* Two-column layout for about content */
+    .about-content {
+        display: none;
+        margin-top: 10px;
+        column-count: 2;
+        column-gap: 20px;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
 
         @media (max-width: 680px) {
             h1 {
@@ -148,14 +165,20 @@
             }
 
             .part {
-                height: 50vw; /* Larger height on very small screens */
+                height: 70vw; /* Larger height on very small screens */
             }
+
+            .part img {
+    width: 85%;
+    height: 295%;
+}
 
             .container {
                 width: 90%; /* Adjust container width for smaller screens */
                 max-width: 100%; /* Standard width for a phone screen */
                 justify-content: center; /* Center the container */
                 padding: 10px;
+
             }
 
             /* Hide corpse2 and corpse3 on mobile screens */
@@ -212,16 +235,17 @@
         <hr>
 
         <!-- About Section -->
-        <h1 class="about-title" onclick="toggleAbout()">ABOUT</h1>
-        <div class="about-content" id="aboutSection">
-            <p>This project explores the surrealist art technique known as the exquisite corpse. By randomly combining different parts of images, new and unique combinations are created that reflect the randomness and unpredictability of this method. Inspired by the works of artists like Salvador Dalí, this web experiment aims to bring the surreal into the digital space.</p>
-            <p>Feel free to click "Generate New Corpses" to experience the randomness in real time. Each click produces a new variation, blending head, body, and leg images from the existing pool of visuals.</p>
-        </div>
+<div class="about-container">
+    <p class="about-title" onclick="toggleAbout()">ABOUT +</p>
+    <div class="about-content" id="aboutSection">
+        <p>This project explores the surrealist art technique known as the exquisite corpse. By randomly combining different parts of images, new and unique combinations are created that reflect the randomness and unpredictability of this method. Inspired by the works of artists like Salvador Dalí, this web experiment aims to bring the surreal into the digital space.</p>
+        <p>Feel free to click "Generate New Corpses" to experience the randomness in real time. Each click produces a new variation, blending head, body, and leg images from the existing pool of visuals.</p>
     </div>
+</div>
 
     <script>
         // Array of available images (assuming images are in a folder named 'fullbodyimages')
-        const totalImages = 278; // Total number of image sets you have
+        const totalImages = 562; // Total number of image sets you have
         const folderPath = "images/";
         const imagePrefix = "ssense_";
 
