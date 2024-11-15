@@ -20,6 +20,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            position: relative;
         }
 
         h1 {
@@ -30,7 +31,7 @@
         }
 
         .bordertext {
-            font-size: 3vw; /* Responsive font size */
+            font-size: 3vw;
             margin: 0px 0;
         }
 
@@ -38,8 +39,8 @@
             font-family: PPEditorialNew-Ultralight, serif;
             text-align: center;
             text-transform: uppercase;
-            font-size: 2vw; /* Responsive font size for the subtitle */
-            margin: 0px 0; /* Reduced margin to bring closer to container */
+            font-size: 2vw;
+            margin: 0px 0;
         }
 
         .container-wrapper {
@@ -54,14 +55,14 @@
             justify-content: center;
             margin-top: 0px;
             border: 1px solid black;
-            padding: 10px; /* Adjusted padding */
-            width: 80%; /* Responsive width */
-            max-width: 1200px; /* Max width for larger screens */
+            padding: 10px;
+            width: 80%;
+            max-width: 1200px;
         }
 
         .exquisite-corpse {
             margin: 0 10px;
-            flex: 1; /* Flexbox to make each model responsive */
+            flex: 1;
         }
 
         .main-headline {
@@ -71,9 +72,9 @@
         }
 
         .part {
-            width: 100%; /* Take full width of parent container */
-            height: 20vw; /* Responsive height based on viewport width */
-            max-height: 200px; /* Cap the max height */
+            width: 100%;
+            height: 20vw;
+            max-height: 200px;
             overflow: hidden;
         }
 
@@ -82,73 +83,45 @@
             height: auto;
         }
 
-        /* Style for the button container */
-    .button-container {
-        display: flex;
-        justify-content: space-between;
-        width: 80%;
-        max-width: 1200px;
-        margin-top: 30px;
-    }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 30px;
+        }
 
-
-        /* Additional button styling */
         button {
             padding: 4px 8px;
             font-size: 1.2rem;
             cursor: pointer;
         }
 
-        /* Horizontal line style */
-        hr {
-            width: 80%;
-            max-width: 1200px;
-            border: 1px solid #ccc;
-            margin: 20px 0;
+        .nav-links {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        /* About section styling */
+        .nav-link {
+            font-family: Helvetica, Sans-Serif;
+            font-weight: lighter;
+            font-size: 1rem;
+            color: black;
+            text-decoration: none;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: text-decoration 0.3s ease;
+        }
 
-    /* About section container aligned left */
-    .about-container {
-        width: 80%;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 20px;
-    }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
 
-    /* Style for About title */
-    .about-title {
-        font-size: 2rem;
-        color: gray;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        text-shadow: none;
-        text-align: left;
-    }
-
-    .about-title:hover {
-        color: black;
-        text-shadow: 0 0 8px red;
-    }
-
-    /* Two-column layout for about content */
-    .about-content {
-        display: none;
-        margin-top: 10px;
-        column-count: 2;
-        column-gap: 20px;
-    }
-
-    .about-content p {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
+        /* Responsive styling */
         @media (max-width: 680px) {
             h1 {
                 font-size: 8vw;
@@ -165,43 +138,60 @@
             }
 
             .part {
-                height: 70vw; /* Larger height on very small screens */
+                height: 70vw;
             }
 
             .part img {
-    width: 85%;
-    height: 295%;
-}
-
-            .container {
-                width: 90%; /* Adjust container width for smaller screens */
-                max-width: 100%; /* Standard width for a phone screen */
-                justify-content: center; /* Center the container */
-                padding: 10px;
-
+                width: 85%;
+                height: 295%;
             }
 
-            /* Hide corpse2 and corpse3 on mobile screens */
+            .container {
+                width: 90%;
+                max-width: 100%;
+                justify-content: center;
+                padding: 10px;
+            }
+
             #corpse2, #corpse3 {
                 display: none;
             }
 
-            /* Center corpse1 within the container */
             #corpse1 {
-                margin: 0 auto; /* Center corpse1 in the container */
+                margin: 0 auto;
+            }
+
+            /* Move ABOUT link to the bottom center on mobile */
+            .about-title {
+                position: static;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+                        .nav-links {
+                position: static; /* Position the links relative to the content */
+                top: auto; /* Remove the top margin */
+                left: auto; /* Remove the left margin */
+                margin-top: 10px; /* Add a margin to space them from the top */
+                margin-left: 0;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top text -->
-    <h1 class="main-headline">ssensexquisitecorpse</h1>
+        <div class="nav-links">
+        <a href="about.html" class="nav-link">ABOUT</a>
+    </div>
 
+    <h1 class="main-headline">ssensexquisitecorpse</h1>
     <h2 class="subtitle">le cadavre exquis boira le vin nouveau</h2>
 
     <div class="container-wrapper">
-        <!-- Exquisite Corpses Container -->
         <div class="container">
             <div class="exquisite-corpse" id="corpse1">
                 <div class="part" id="corpse1-head"></div>
@@ -220,37 +210,23 @@
             </div>
         </div>
         
-        <!-- Bottom text -->
         <h2 class="subtitle">the exquisite corpse will drink the new wine</h2>
 
-        <!-- Button container for aligned buttons -->
         <div class="button-container">
             <a href="make-your-own.html">
                 <button>Make Your Own</button>
             </a>
             <button onclick="generateCorpses()">Generate New Corpses</button>
         </div>
-
-        <!-- Horizontal Line -->
-        <hr>
-
-        <!-- About Section -->
-<div class="about-container">
-    <p class="about-title" onclick="toggleAbout()">ABOUT +</p>
-    <div class="about-content" id="aboutSection">
-        <p>This project explores the surrealist art technique known as the exquisite corpse. By randomly combining different parts of images, new and unique combinations are created that reflect the randomness and unpredictability of this method. Inspired by the works of artists like Salvador Dalí, this web experiment aims to bring the surreal into the digital space.</p>
-        <p>Feel free to click "Generate New Corpses" to experience the randomness in real time. Each click produces a new variation, blending head, body, and leg images from the existing pool of visuals.</p>
     </div>
-</div>
 
     <script>
-        // Array of available images (assuming images are in a folder named 'fullbodyimages')
-        const totalImages = 563; // Total number of image sets you have
+        const totalImages = 563;
         const folderPath = "images/";
         const imagePrefix = "ssense_";
 
         function getRandomImage(part) {
-            const randomNumber = Math.floor(Math.random() * totalImages) + 1; // Random number between 1 and totalImages
+            const randomNumber = Math.floor(Math.random() * totalImages) + 1;
             return `${folderPath}${imagePrefix}${randomNumber}.jpg#${part}`;
         }
 
@@ -262,22 +238,10 @@
             }
         }
 
-        // Load random corpses on page load
         window.onload = generateCorpses;
-
-        // Function to toggle the about section visibility
-        function toggleAbout() {
-            const aboutSection = document.getElementById("aboutSection");
-            if (aboutSection.style.display === "none" || aboutSection.style.display === "") {
-                aboutSection.style.display = "block";
-            } else {
-                aboutSection.style.display = "none";
-            }
-        }
     </script>
 </body>
 </html>
-
 
 
 

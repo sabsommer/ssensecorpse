@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <link rel="icon" href="ssense_logo_v2.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exquisite Corpses</title>
@@ -190,9 +191,55 @@
                 width: 76%;
             }
         }
+
+        /* Navigation links in the upper left corner */
+        .nav-links {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-link {
+            font-family: Helvetica, Sans-Serif;
+            font-weight: lighter;
+            font-size: 1rem;
+            color: black;
+            text-decoration: none;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Stack navigation links on top of each other for smaller screens */
+        @media (max-width: 680px) {
+            .nav-links {
+                position: static; /* Position the links relative to the content */
+                top: auto; /* Remove the top margin */
+                left: auto; /* Remove the left margin */
+                margin-top: 10px; /* Add a margin to space them from the top */
+                margin-left: 0;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Upper-left navigation links -->
+    <div class="nav-links">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="about.html" class="nav-link">ABOUT</a>
+    </div>
+
     <h1 class="main-headline">ssensexquisitecorpse</h1>
     <h2 class="subtitle">le cadavre exquis boira le vin nouveau</h2>
     <div class="container-wrapper">
@@ -216,14 +263,6 @@
             </div>
         </div>
         <h2 class="subtitle">the exquisite corpse will drink the new wine</h2>
-                <a href="index.html">
-            <button>Back to Homepage</button>
-        </a>
-        <hr>
-        <h1 class="about-title" onclick="toggleAbout()">ABOUT</h1>
-        <div class="about-content" id="aboutSection">
-            <p>This project explores the surrealist art technique known as the exquisite corpse. By randomly combining different parts of images, new and unique combinations are created that reflect the randomness and unpredictability of this method. Inspired by the works of artists like Salvador Dalí, this web experiment aims to bring the surreal into the digital space.</p>
-            <p>Feel free to use the arrows to change parts of the corpse and create your own unique combinations.</p>
         </div>
     </div>
 
@@ -249,28 +288,25 @@
             let currentImage;
             if (part === 'head') {
                 currentHead = (currentHead + direction - 1 + totalImages) % totalImages + 1;
-                currentImage = currentHead;
-                document.getElementById('head-img').src = `images/ssense_${currentImage}.jpg`;
+                currentImage = document.getElementById('head-img');
+                currentImage.src = `images/ssense_${currentHead}.jpg`;
             } else if (part === 'body') {
                 currentBody = (currentBody + direction - 1 + totalImages) % totalImages + 1;
-                currentImage = currentBody;
-                document.getElementById('body-img').src = `images/ssense_${currentImage}.jpg`;
+                currentImage = document.getElementById('body-img');
+                currentImage.src = `images/ssense_${currentBody}.jpg`;
             } else if (part === 'bottom') {
                 currentBottom = (currentBottom + direction - 1 + totalImages) % totalImages + 1;
-                currentImage = currentBottom;
-                document.getElementById('bottom-img').src = `images/ssense_${currentImage}.jpg`;
+                currentImage = document.getElementById('bottom-img');
+                currentImage.src = `images/ssense_${currentBottom}.jpg`;
             }
         }
 
-        function toggleAbout() {
-            const aboutContent = document.getElementById('aboutSection');
-            aboutContent.style.display = aboutContent.style.display === 'none' || aboutContent.style.display === '' ? 'block' : 'none';
-        }
-
+        // Initialize the random parts when the page loads
         window.onload = initializeRandomParts;
     </script>
 </body>
 </html>
+
 
 
 

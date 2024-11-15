@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="ssense_logo_v2.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Exquisite Corpses</title>
+    <style>
+        @font-face {
+            font-family: 'PPEditorialNew-Ultralight';
+            src: url('fonts/PPEditorialNew-Ultralight.woff2') format('woff2'),
+                 url('fonts/PPEditorialNew-Ultralight.woff') format('woff'),
+                 url('fonts/PPEditorialNew-Ultralight.ttf') format('truetype');
+            font-weight: Extra Light;
+            font-style: normal;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: Helvetica, Sans-Serif;
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-top: 2px;
+        }
+
+        .textedit {
+            font-family: Helvetica, Sans-Serif;
+            font-weight: normal;
+        }
+
+        .about-content {
+            font-family: PPEditorialNew-Ultralight, serif;
+            font-size: 1rem;
+            margin: 20px auto;
+            max-width: 900px;
+            line-height: 1.8;
+            color: #333;
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 equal columns */
+            grid-gap: 30px; /* Adds space between columns */
+        }
+
+        .column1 {
+            font-family: Helvetica, Sans-Serif;
+            font-weight: lighter;
+            font-size: 1rem;
+            text-transform: uppercase;
+            grid-column: span 2; /* Span across both columns */
+            margin: 0px;
+        }
+
+        /* Navigation links in the upper left corner */
+        .nav-links {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-link {
+            font-family: Helvetica, Sans-Serif;
+            font-weight: lighter;
+            font-size: 1rem;
+            color: black;
+            text-decoration: none;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+a:link {text-decoration: none;
+color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+a:visited {
+  text-decoration: none;
+color: black;}
+
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: static; /* Position the links relative to the content */
+                top: auto; /* Remove the top margin */
+                left: auto; /* Remove the left margin */
+                margin-top: 10px; /* Add a margin to space them from the top */
+                margin-left: 0;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr; /* 1 column layout */
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+        <div class="nav-links">
+            <div class="nav-links">
+        <a href="index.html" class="nav-link">HOME</a>
+    </div>
+    </div>
+
+    <h1>About SSENSECORPSE.COM</h1>
+
+    <p class="column1">This project explores the surrealist art technique known as the exquisite corpse. </p>
+
+    <div class="about-content">
+        <p class="textedit">This project explores the surrealist art technique known as the exquisite corpse. By randomly combining different parts of images, new and unique combinations are created that reflect the randomness and unpredictability of this method. Inspired by the surrealism of the outfits, the similarity of e-commerce models, and the fast fashion influences on luxury goods I’ve created a tool inspired by “The Exquisite Corpse” game. The website creates a new combination of models pulling from a photo library of a thousand images that were scraped off of ssense using a python script.  
+Feel free to click "Generate New Corpses" on the homepage to experience the randomness in real-time. Each click produces a new variation, blending head, body, and leg images from the existing pool of visuals. <a href="make-your-own.html" class="p-link">“Make your own”</a> will provide one model in which you can change each section of the corpse.
+</p>
+
+        <!-- Content in two columns -->
+        <p>On the 3rd day of 2024, I decided to delete all social media off of my phone. An action I typically only did in fits of spontaneity, I was determined to take it seriously this time. In the wake of my social-less phone, I took refuge in a different type of infinite scroll: the Ssense app. I was mystified by the monotony of it. I rarely bought anything and yet searched through the sea of models with the same facial expressions, and their straight square or slight ¾ pose, all wearing outfits I couldn’t fathom living in. I admire fashion and don’t think its utility is a requirement, however, even the most out-of-place combinations started to merge into one another. The sterility of the UI with its neat columns and uppercased sans serif started to seem like some sort of simulation. The posing and the stone facial expressions of the models struck my psychosis. Were they even really there, or were the clothes just photoshopped on with no one caring enough to wonder if they were real or not? Daily, there was always a new page of new outfits, items, and models. Ssense, mainly geared as a luxury fashion carrier, was releasing and distributing products with as much regularity as a Forever 21. The division of  “Self-expression, status consumption, and perceived quality are motivators for luxury fashion brand addiction, while continuous update of fashion-led items, perceived value, and product assortments are motivators for fast-fashion brand addiction.” is no longer true.<br><br>Kniazeva, M., Aiello, G., Dasmi, C., Mazzoli, V., Nechaeva, O., & Syed, F. U. (2023). Why fashion brands enter the metaverse: Exploring the motivations of fast fashion and luxury fashion brands. Journal of Global Fashion Marketing, 15(1), 62–89.</p>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
